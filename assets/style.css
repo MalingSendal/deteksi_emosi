@@ -1,0 +1,126 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* PENGATURAN DASAR & WARNA */
+:root {
+    --bg-dark: #121212;
+    --card-dark: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --gradient-start: #8A2BE2; /* Biru Ungu */
+    --gradient-end: #FF1493;   /* Deep Pink */
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+.background-texture {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(138, 43, 226, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(255, 20, 147, 0.1), transparent 50%);
+    z-index: -1;
+}
+
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NAVIGASI */
+nav {
+    padding: 15px 0;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky; top: 0; z-index: 10;
+}
+.nav-container {
+    display: flex; justify-content: space-between; align-items: center;
+}
+nav .logo {
+    font-size: 1.8em; font-weight: 700; text-decoration: none;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+nav ul { list-style: none; padding: 0; margin: 0; display: flex; }
+nav ul li a {
+    text-decoration: none; color: var(--text-secondary);
+    padding: 10px 15px; font-weight: 600; transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+nav ul li a:hover { color: var(--text-primary); }
+nav ul li a.active { /* Style untuk link yang aktif */
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--gradient-start);
+}
+
+/* KARTU KONTEN */
+.card {
+    background-color: var(--card-dark); padding: 30px;
+    margin-top: 30px; border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* TEKS & JUDUL */
+h1, h2 { font-weight: 700; margin-top: 0; margin-bottom: 20px; }
+.gradient-text {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+h2 { font-size: 1.8em; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; color: var(--text-primary); }
+p { color: var(--text-secondary); }
+strong, b { color: var(--text-primary); }
+ol li { margin-bottom: 10px; }
+
+/* FORM PREDIKSI */
+#prediction-form label { display: block; margin-bottom: 10px; font-weight: 600; color: var(--text-primary); }
+#prediction-form textarea {
+    width: 100%; padding: 15px; background-color: var(--bg-dark);
+    border: 1px solid var(--border-color); border-radius: 8px; font-size: 1em;
+    font-family: 'Inter', sans-serif; color: var(--text-primary);
+    box-sizing: border-box; transition: border-color 0.3s, box-shadow 0.3s;
+}
+#prediction-form textarea:focus {
+    outline: none; border-color: var(--gradient-start);
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3);
+}
+#prediction-form button {
+    display: block; width: 100%; padding: 15px;
+    background-image: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    color: white; border: none; border-radius: 8px; font-size: 1.1em;
+    font-weight: 600; cursor: pointer; margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#prediction-form button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(193, 72, 236, 0.3);
+}
+
+/* HASIL PREDIKSI */
+#result-section { border-top: 1px solid var(--border-color); margin-top: 30px; padding-top: 30px; }
+#hasilPrediksi {
+    margin-top: 15px; padding: 25px;
+    background-color: rgba(138, 43, 226, 0.1);
+    border-left: 5px solid var(--gradient-start);
+    border-radius: 0 8px 8px 0;
+    font-size: 1.2em;
+}
+#hasilPrediksi strong { font-size: 1.5em; display: block; margin-top: 5px; }
+
+/* FOOTER */
+footer { text-align: center; padding: 30px 20px; margin-top: 40px; color: var(--text-secondary); font-size: 0.9em; }
